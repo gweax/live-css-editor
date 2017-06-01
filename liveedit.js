@@ -1,5 +1,20 @@
 (function() {
 
+    var html = location.search.match(/(?:[?&])html=([^&]*)/),
+        css = location.search.match(/(?:[?&])css=([^&]*)/);
+
+    if (html) {
+        document.getElementById('html').value = decodeURIComponent(html[1]);
+    }
+
+    if (css) {
+        document.getElementById('css').innerHTML = decodeURIComponent(css[1]);
+    }
+
+}());
+
+(function() {
+
     var elementBlacklist = {
         SCRIPT: true,
         HTML: true,
