@@ -1,7 +1,8 @@
 (function() {
 
     var html = location.search.match(/(?:[?&])html=([^&]*)/),
-        css = location.search.match(/(?:[?&])css=([^&]*)/);
+        css = location.search.match(/(?:[?&])css=([^&]*)/),
+        show = location.search.match(/(?:[?&])show=([^&]*)/);
 
     if (html) {
         document.getElementById('html').value = decodeURIComponent(html[1]);
@@ -9,6 +10,10 @@
 
     if (css) {
         document.getElementById('css').innerHTML = decodeURIComponent(css[1]);
+    }
+
+    if (show) {
+        document.body.className = decodeURIComponent(show[1]);
     }
 
 }());
@@ -72,3 +77,8 @@
     });
 
 }());
+
+function getUrlParameters() {
+    return '?html=' + encodeURIComponent(document.getElementById('html').value) +
+        '&css=' + encodeURIComponent(document.getElementById('css').innerText);
+}

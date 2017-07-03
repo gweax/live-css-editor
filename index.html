@@ -10,15 +10,20 @@
 </head>
 
 <body>
-    <section data-label="HTML">
-        <textarea id="html" spellcheck="false"></textarea>
+    <section class="outer-box outer-box--html">
+        <h1><label for="html">HTML</label></h1>
+        <textarea class="box" id="html" spellcheck="false"></textarea>
     </section>
 
-    <section data-label="CSS">
-        <style id="css" contenteditable spellcheck="false"></style>
+    <section class="outer-box outer-box--css">
+        <h1>CSS</h1>
+        <style class="box" id="css" contenteditable spellcheck="false"></style>
     </section>
 
-    <section data-label="Result" id="result"></section>
+    <section class="outer-box outer-box--result">
+        <h1>Result</h1>
+        <div class="box" id="result"></div>
+    </section>
 
     <script src="liveedit.js"></script>
 </body>
